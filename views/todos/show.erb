@@ -1,0 +1,6 @@
+<h1><%= @todo['name'] %></h1>
+
+<p><strong>Beskrivning:</strong> <%= @todo['description'] %></p>
+<p><strong>Status:</strong> <%= @todo['completed'] == 1 ? 'Klar' : 'Inte klar' %></p>
+
+<a href="/todos">Tillbaka till alla todos</a>

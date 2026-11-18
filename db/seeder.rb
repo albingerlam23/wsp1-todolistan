@@ -6,6 +6,7 @@ db = SQLite3::Database.new(DB_PATH)
 puts "Använder databasen: #{DB_PATH}"
 puts "🧹 Tar bort gamla tabeller..."
 db.execute('DROP TABLE IF EXISTS todos')
+db.execute('DROP TABLE IF EXISTS categories')
 
 puts "🧱 Skapar tabeller..."
 db.execute('CREATE TABLE todos (
@@ -13,6 +14,8 @@ db.execute('CREATE TABLE todos (
             name TEXT NOT NULL, 
             description TEXT,
             completed INTEGER DEFAULT 0 )')
+
+db.execute('CREATE TABLE categories')
 
 puts "🍎 Fyller på med data..."
 db.execute('INSERT INTO todos (name, description, completed) VALUES ("Köp mjölk", "3 lite mellanmjölk, eko", 1)')

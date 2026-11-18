@@ -1,1 +1,12 @@
-<img src="/img/glhf.png">
+<h1>Mina Todos</h1>
+
+<ul>
+  <% @todos.each do |todo| %>
+    <li>
+      <a href="/todos/<%= todo['id'] %>">
+        <strong><%= todo['name'] %></strong>
+      </a>
+      <p><%= todo['description'] %></p>
+    </li>
+  <% end %>
+</ul>
